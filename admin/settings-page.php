@@ -20,7 +20,29 @@ add_action('admin_menu', 'stripe_payment_admin_menu');
 function stripe_settings_page() {
     ?>
     <div class="wrap">
-        <h1>Stripe Settings</h1>
-    </div>
+    <h1>Stripe Settings</h1>
+
+    <form method="post">
+        <table class="form-table">
+            <tr>
+                <th>Publishable Key</th>
+                <td>
+                    <input type="text" name="stripe_publishable_key" class="regular-text">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Secret Key</th>
+                <td>
+                    <input type="password" name="stripe_secret_key" class="regular-text">
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit" class="button button-primary">
+            Save Settings
+        </button>
+    </form>
+</div>
     <?php
 }
